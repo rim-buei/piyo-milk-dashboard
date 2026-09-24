@@ -1,4 +1,4 @@
-import type { PiyoLogResponse, PiyoLogRecord } from "types/feed";
+import type { PiyoLogResponse, PiyoLogRecord } from "types/piyoLog";
 
 function filterPiyoLogResponse(response: PiyoLogResponse): PiyoLogRecord[] {
   const now = new Date();
