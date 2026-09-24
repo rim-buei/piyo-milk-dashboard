@@ -1,5 +1,5 @@
 import type { PiyoLogResponse, PiyoLogRecord } from "types/piyoLog";
-import type { Dashboard, FeedingRecord } from "types/dashboard";
+import type { Dashboard, Feeding } from "types/dashboard";
 
 function analyzePiyoLogResponse(response: PiyoLogResponse): Dashboard {
   const config = useRuntimeConfig();
@@ -15,7 +15,7 @@ function analyzePiyoLogResponse(response: PiyoLogResponse): Dashboard {
     .filter((record: PiyoLogRecord) => {
       return new Date(record.datetime) >= start;
     })
-    .map((record: PiyoLogRecord): FeedingRecord => {
+    .map((record: PiyoLogRecord): Feeding => {
       return {
         datetime: record.datetime,
         amount: record.value.value,
