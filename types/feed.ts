@@ -1,19 +1,19 @@
 export interface PiyoLogResponse {
-  schema_version: number
-  generated_at: string
+  schema_version: number;
+  generated_at: string;
   range: {
-    from: string
-    to: string
-  }
-  records: PiyoLogRecord[]
+    from: string;
+    to: string;
+  };
+  records: PiyoLogRecord[];
 }
 
 export interface PiyoLogRecord {
-  event_id: string
-  datetime: string
-  type: string
+  event_id: string;
+  datetime: string;
+  type: string;
   value: {
-    value: number
-    unit: string
-  }
+    value: number;
+    unit: string;
+  };
 }
