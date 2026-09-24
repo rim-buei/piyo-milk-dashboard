@@ -3,9 +3,9 @@ export interface Dashboard {
   dailyTotal: number;
 
   feedings: FeedingRecord[];
-  lastFeeding: FeedingRecord;
+  lastFeeding: FeedingRecord | null;
 
-  elapsedMinutes: number;
+  elapsedMinutes: number | null;
 
   updatedAt: string;
 }
