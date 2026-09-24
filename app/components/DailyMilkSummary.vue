@@ -1,7 +1,7 @@
 <script setup lang="ts">
 interface Props {
-  totalAmount: number;
   targetAmount: number;
+  totalAmount: number;
 }
 
 const props = defineProps<Props>();

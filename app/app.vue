@@ -4,6 +4,6 @@ const { data } = await useFetch("/api/dashboard");
 
 <template>
   <main>
-    <DailyMilkSummary :totalAmount="data.dailyTotal" :targetAmount="data.dailyTarget" />
+    <DailyMilkSummary :targetAmount="data.dailyTarget" :totalAmount="data.dailyTotal" />
   </main>
 </template>
