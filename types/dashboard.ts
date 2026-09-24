@@ -1,6 +1,6 @@
 export interface Dashboard {
-  dailyTotal: number;
   dailyTarget: number;
+  dailyTotal: number;
 
   feedings: FeedingRecord[];
   lastFeeding: FeedingRecord;
