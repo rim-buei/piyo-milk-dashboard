@@ -1,15 +1,15 @@
-import type { PiyoLogResponse } from "types/feed";
+import type { PiyoLogResponse, PiyoLogRecord } from "types/feed";
 
-function filterPiyoLogResponse(response: PiyoLogResponse) {
+function filterPiyoLogResponse(response: PiyoLogResponse): PiyoLogRecord[] {
   const now = new Date();
   const today = new Intl.DateTimeFormat("en-CA", { timeZone: "Asia/Tokyo" }).format(now);
   const start = new Date(`${today}T00:00:00+09:00`);
 
   return response.records
-    .filter((record) => {
+    .filter((record: PiyoLogRecord) => {
       return ["BreastFeeding", "Formula"].includes(record.type);
     })
-    .filter((record) => {
+    .filter((record: PiyoLogRecord) => {
       return new Date(record.datetime) >= start;
     });
 }
