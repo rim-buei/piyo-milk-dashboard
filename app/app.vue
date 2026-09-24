@@ -6,10 +6,6 @@ const { data } = await useFetch("/api/dashboard");
   <main>
     <DailyMilkSummary :targetAmount="data.dailyTarget" :totalAmount="data.dailyTotal" />
 
-    <LastFeeding
-      :amount="data.lastFeeding.amount"
-      :datetime="data.lastFeeding.datetime"
-      :elapsed-minutes="data.elapsedMinutes"
-    />
+    <LastFeeding :elapsed-minutes="data.elapsedMinutes" :lastFeeding="data.lastFeeding" />
   </main>
 </template>

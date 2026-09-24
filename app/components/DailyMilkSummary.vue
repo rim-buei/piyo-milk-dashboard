@@ -1,10 +1,14 @@
 <script setup lang="ts">
-interface Props {
-  targetAmount: number;
-  totalAmount: number;
-}
-
-const props = defineProps<Props>();
+const props = defineProps({
+  totalAmount: {
+    type: Number,
+    required: true,
+  },
+  targetAmount: {
+    type: Number,
+    required: true,
+  },
+});
 </script>
 
 <template>

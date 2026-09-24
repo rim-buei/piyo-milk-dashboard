@@ -1,11 +1,19 @@
 <script setup lang="ts">
-interface Props {
+interface Feeding {
   amount: number;
   datetime: string;
-  elapsedMinutes: number;
 }
 
-const props = defineProps<Props>();
+const props = defineProps({
+  elapsedMinutes: {
+    type: Number,
+    required: true,
+  },
+  lastFeeding: {
+    type: Object as () => Feeding,
+    required: true,
+  },
+});
 </script>
 
 <template>
@@ -18,8 +26,8 @@ const props = defineProps<Props>();
       </div>
       <div>
         <span>前回:</span>
-        <strong>{{ datetime }}</strong>
-        <strong>{{ amount }}</strong>
+        <strong>{{ lastFeeding.datetime }}</strong>
+        <strong>{{ lastFeeding.amount }}</strong>
       </div>
     </div>
   </section>
