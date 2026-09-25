@@ -1,5 +1,7 @@
 <script setup lang="ts">
-const { data } = await useFetch("/api/dashboard");
+const { data, pending, error, refresh } = useDashboard();
+
+useAutoRefresh(refresh);
 </script>
 
 <template>
