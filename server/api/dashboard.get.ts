@@ -18,7 +18,7 @@ function analyzePiyoLogResponse(response: PiyoLogResponse): Dashboard {
     .map((record: PiyoLogRecord): Feeding => {
       return {
         datetime: record.datetime,
-        amount: record.value.value,
+        amount: record.value?.value,
       };
     });
   const lastFeeding = feedings[feedings.length - 1];
