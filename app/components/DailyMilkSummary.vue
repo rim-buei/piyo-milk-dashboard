@@ -25,7 +25,7 @@ const progress = computed(() => {
       <h2 class="text-xl font-bold text-slate-700">今日のミルク</h2>
 
       <span class="rounded-full bg-slate-100 px-3 py-1 text-sm font-medium text-slate-500">
-        目標 {{ targetAmount }} ml
+        上限設定 {{ targetAmount }} ml
       </span>
     </div>
 

@@ -37,7 +37,7 @@ const elapsedText = computed(() => {
 
     <div v-if="lastFeeding" class="flex flex-1 flex-col justify-center">
       <div class="text-center">
-        <p class="text-sm font-medium text-slate-500">前回から</p>
+        <p class="text-sm font-medium text-slate-500">前回からの経過時間</p>
 
         <p class="mt-1 text-5xl font-bold tracking-tight text-slate-900">
           {{ elapsedText }}
