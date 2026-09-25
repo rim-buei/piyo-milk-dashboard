@@ -18,7 +18,7 @@ const props = defineProps({
 
     <div v-for="feeding in feedings">
       <div>
-        <span>{{ feeding.datetime }}</span>
+        <span>{{ formatDateTime(feeding.datetime) }}</span>
         <span>{{ feeding.amount }} ml</span>
         <span>{{ feeding.type }}</span>
       </div>

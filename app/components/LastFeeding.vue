@@ -26,7 +26,7 @@ const props = defineProps({
       </div>
       <div>
         <span>前回:</span>
-        <strong>{{ lastFeeding.datetime }}</strong>
+        <strong>{{ formatDateTime(lastFeeding.datetime) }}</strong>
         <strong>{{ lastFeeding.amount }} ml</strong>
       </div>
     </div>
