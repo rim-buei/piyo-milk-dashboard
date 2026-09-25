@@ -27,9 +27,13 @@ function analyzePiyoLogResponse(response: PiyoLogResponse): Dashboard {
 
   return {
     dailyTarget: config.dailyTarget,
-    dailyTotal: feedings.reduce((acc: number, feeding: Feeding) => {
-      return acc + feeding.amount;
-    }, 0),
+    dailyTotal: feedings
+      .filter((feeding: Feeding) => {
+        return feeding.amount > 0;
+      })
+      .reduce((acc: number, feeding: Feeding) => {
+        return acc + feeding.amount;
+      }, 0),
 
     feedings: feedings,
     lastFeeding: lastFeeding,

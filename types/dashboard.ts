@@ -13,5 +13,5 @@ export interface Dashboard {
 export interface Feeding {
   type: string;
   datetime: string;
-  amount: number;
+  amount: number | null;
 }
