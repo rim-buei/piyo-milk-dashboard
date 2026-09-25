@@ -31,8 +31,8 @@ const props = defineProps({
             <span class="w-20 text-2xl font-semibold tabular-nums text-slate-800">
               {{ formatDateTime(feeding.datetime) }}
             </span>
-            <span class="text-sm font-medium text-slate-400">
-              {{ feeding.type }}
+            <span class="text-xl font-medium text-slate-400">
+              {{ translateFeedingType(feeding.type) }}
             </span>
           </div>
 
@@ -41,9 +41,7 @@ const props = defineProps({
               {{ feeding.amount }}
               <span class="text-base font-medium text-slate-400"> ml</span>
             </div>
-            <div v-else>
-              記録なし
-            </div>
+            <div v-else>記録なし</div>
           </span>
         </li>
       </ul>
