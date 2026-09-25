@@ -33,21 +33,21 @@ const elapsedText = computed(() => {
 
 <template>
   <section class="flex h-full flex-col rounded-3xl bg-white p-6 shadow-lg ring-1 ring-slate-200">
-    <h2 class="text-xl font-bold text-slate-700">前回のミルク</h2>
+    <h1 class="text-3xl font-bold text-slate-700">前回のミルク</h1>
 
     <div v-if="lastFeeding" class="flex flex-1 flex-col justify-center">
       <div class="text-center">
-        <p class="text-sm font-medium text-slate-500">前回からの経過時間</p>
+        <p class="text-3xl font-medium text-slate-500">前回からの経過時間</p>
 
-        <p class="mt-1 text-5xl font-bold tracking-tight text-slate-900">
+        <p class="mt-1 text-6xl font-bold tracking-tight text-slate-900">
           {{ elapsedText }}
         </p>
       </div>
 
       <div class="mt-6 flex items-center justify-center gap-8">
         <div class="text-center">
-          <p class="text-sm text-slate-500">時刻</p>
-          <p class="mt-1 text-2xl font-semibold text-slate-800">
+          <p class="text-3xl text-slate-500">時刻</p>
+          <p class="mt-1 text-6xl font-semibold text-slate-800">
             {{ formatDateTime(lastFeeding.datetime) }}
           </p>
         </div>
@@ -55,8 +55,8 @@ const elapsedText = computed(() => {
         <div v-if="lastFeeding.amount" class="h-10 w-px bg-slate-200" />
 
         <div v-if="lastFeeding.amount" class="text-center">
-          <p class="text-sm text-slate-500">量</p>
-          <p class="mt-1 text-2xl font-semibold text-slate-800">
+          <p class="text-3xl text-slate-500">量</p>
+          <p class="mt-1 text-6xl font-semibold text-slate-800">
             {{ lastFeeding.amount }}
             <span class="text-base font-medium text-slate-500"> ml</span>
           </p>

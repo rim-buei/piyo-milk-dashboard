@@ -15,9 +15,9 @@ const props = defineProps({
 <template>
   <section class="flex h-full flex-col rounded-3xl bg-white p-6 shadow-lg ring-1 ring-slate-200">
     <div class="mb-5 flex items-center justify-between">
-      <h2 class="text-xl font-bold text-slate-700">今日の履歴</h2>
+      <h1 class="text-3xl font-bold text-slate-700">今日の履歴</h1>
 
-      <span class="text-sm font-medium text-slate-400">{{ feedings.length }} 回</span>
+      <span class="text-3xl font-medium text-slate-400">{{ feedings.length }} 回</span>
     </div>
 
     <div v-if="feedings.length > 0" class="min-h-0 flex-1 overflow-y-auto">
@@ -28,15 +28,15 @@ const props = defineProps({
           class="flex items-center justify-between py-4 first:pt-0"
         >
           <div class="flex items-center gap-4">
-            <span class="w-20 text-2xl font-semibold tabular-nums text-slate-800">
+            <span class="w-40 text-3xl font-semibold tabular-nums text-slate-800">
               {{ formatDateTime(feeding.datetime) }}
             </span>
-            <span class="text-xl font-medium text-slate-400">
+            <span class="text-3xl font-medium text-slate-400">
               {{ translateFeedingType(feeding.type) }}
             </span>
           </div>
 
-          <span class="text-2xl font-bold tabular-nums text-slate-700">
+          <span class="text-3xl font-bold tabular-nums text-slate-700">
             <div v-if="feeding.amount">
               {{ feeding.amount }}
               <span class="text-base font-medium text-slate-400"> ml</span>
