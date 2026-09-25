@@ -26,7 +26,7 @@ function analyzePiyoLogResponse(response: PiyoLogResponse): Dashboard {
 
   return {
     dailyTarget: config.dailyTarget,
-    dailyTotal: feedings.reduce((acc, feeding) => {
+    dailyTotal: feedings.reduce((acc: number, feeding: Feeding) => {
       return acc + feeding.amount;
     }, 0),
 
