@@ -9,7 +9,7 @@ const currentDateTimeText = computed(() => {
     <h1 class="text-3xl font-bold text-slate-700">現在時刻</h1>
 
     <div class="flex flex-1 items-center justify-center">
-      <p class="text-9xl font-bold text-slate-700">{{ currentDateTimeText }}</p>
+      <p class="text-6xl font-bold text-slate-700">{{ currentDateTimeText }}</p>
     </div>
   </section>
 </template>
