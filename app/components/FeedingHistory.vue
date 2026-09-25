@@ -20,6 +20,7 @@ const props = defineProps({
       <div>
         <span>{{ feeding.datetime }}</span>
         <span>{{ feeding.amount }} ml</span>
+        <span>{{ feeding.type }}</span>
       </div>
     </div>
   </section>

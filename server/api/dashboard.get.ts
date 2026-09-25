@@ -17,6 +17,7 @@ function analyzePiyoLogResponse(response: PiyoLogResponse): Dashboard {
     })
     .map((record: PiyoLogRecord): Feeding => {
       return {
+        type: record.type,
         datetime: record.datetime,
         amount: record.value?.value,
       };
