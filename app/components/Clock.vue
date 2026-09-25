@@ -1,6 +1,9 @@
 <script setup lang="ts">
-const currentDateTimeText = computed(() => {
-  return formatDateTime(new Date().toISOString());
+const props = defineProps({
+  datetime: {
+    type: String,
+    required: true,
+  },
 });
 </script>
 
@@ -9,7 +12,7 @@ const currentDateTimeText = computed(() => {
     <h1 class="text-3xl font-bold text-slate-700">現在時刻</h1>
 
     <div class="flex flex-1 items-center justify-center">
-      <p class="text-6xl font-bold text-slate-700">{{ currentDateTimeText }}</p>
+      <p class="text-6xl font-bold text-slate-700">{{ formatDateTime(datetime) }}</p>
     </div>
   </section>
 </template>
