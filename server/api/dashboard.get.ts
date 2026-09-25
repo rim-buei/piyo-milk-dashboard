@@ -10,7 +10,7 @@ function analyzePiyoLogResponse(response: PiyoLogResponse): Dashboard {
 
   const feedings = response.records
     .filter((record: PiyoLogRecord) => {
-      return ["BreastFeeding", "Formula"].includes(record.type);
+      return ["BreastFeeding", "ExpressedBreastMilk", "Formula"].includes(record.type);
     })
     .filter((record: PiyoLogRecord) => {
       return new Date(record.datetime) >= start;
