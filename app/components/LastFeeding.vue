@@ -58,7 +58,7 @@ const elapsedText = computed(() => {
           <p class="text-3xl text-slate-500">量</p>
           <p class="mt-1 text-6xl font-semibold text-slate-800">
             {{ lastFeeding.amount }}
-            <span class="text-base font-medium text-slate-500"> ml</span>
+            <span class="text-3xl font-medium text-slate-500"> ml</span>
           </p>
         </div>
       </div>

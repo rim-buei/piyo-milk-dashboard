@@ -39,7 +39,7 @@ const props = defineProps({
           <span class="text-3xl font-bold tabular-nums text-slate-700">
             <div v-if="feeding.amount">
               {{ feeding.amount }}
-              <span class="text-base font-medium text-slate-400"> ml</span>
+              <span class="text-3xl font-medium text-slate-400"> ml</span>
             </div>
             <div v-else>記録なし</div>
           </span>
