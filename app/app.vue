@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const { data, pending, error, refresh } = useDashboard();
+const { data, _pending, _error, refresh } = useDashboard();
 
 useAutoRefresh(refresh);
 </script>
@@ -9,14 +9,14 @@ useAutoRefresh(refresh);
     <div class="grid h-full grid-cols-4 grid-rows-4 gap-6">
       <div class="col-span-2 row-span-2">
         <DailyMilkSummary
-          :targetAmount="data.dailyTarget"
-          :totalAmount="data.dailyTotal"
+          :target-amount="data.dailyTarget"
+          :total-amount="data.dailyTotal"
           class="h-full"
         />
       </div>
 
       <div class="col-span-2 row-span-1">
-        <Clock :datetime="data.updatedAt" class="h-full" />
+        <CurrentTime :date-time="data.updatedAt" class="h-full" />
       </div>
 
       <div class="col-span-2 row-span-4">
@@ -25,8 +25,8 @@ useAutoRefresh(refresh);
 
       <div class="col-span-2 row-span-3">
         <LastFeeding
-          :elapsedMinutes="data.elapsedMinutes"
-          :lastFeeding="data.lastFeeding"
+          :elapsed-minutes="data.elapsedMinutes"
+          :last-feeding="data.lastFeeding"
           class="h-full"
         />
       </div>

@@ -4,7 +4,7 @@ interface Feeding {
   amount: number;
 }
 
-const props = defineProps({
+defineProps({
   feedings: {
     type: Object as () => Feeding,
     required: true,

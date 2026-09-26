@@ -1,6 +1,6 @@
 <script setup lang="ts">
-const props = defineProps({
-  datetime: {
+defineProps({
+  dateTime: {
     type: String,
     required: true,
   },
@@ -15,7 +15,7 @@ const config = useRuntimeConfig();
 
     <div class="flex flex-1 items-center justify-center">
       <p class="text-6xl font-bold text-slate-700">
-        {{ formatDateTime(datetime, config.public.timeZone) }}
+        {{ formatDateTime(dateTime, config.public.timeZone) }}
       </p>
     </div>
   </section>
