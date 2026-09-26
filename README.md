@@ -12,30 +12,54 @@ A dashboard for tracking daily baby milk intake, feeding intervals, and feeding 
 
 ## Getting Started
 
-First, configure `piyoLogFeedUrl` in [nuxt.config.ts](./nuxt.config.ts).
+Before building the application, configure `piyoLogFeedUrl` in [nuxt.config.ts](./nuxt.config.ts) to point to your PiyoLog Data Feed API endpoint.
 
-To build and run the application in production mode:
+Install the dependencies and build the application:
 
-```bash
+```sh
 nvm install "$(cat .nvmrc)"
 npm install
 npm run build
+```
+
+Start the application server:
+
+```sh
 node .output/server/index.mjs
 ```
 
-Then open http://localhost:3000.
+Once the server is running, open http://localhost:3000.
+
+## Getting Started with Docker
+
+Build the Docker image:
+
+```sh
+docker build -t piyo-milk-dashboard:latest .
+```
+
+Run the container with your PiyoLog Data Feed URL:
+
+```sh
+docker run -it --rm \
+  -p 3000:3000 \
+  -e NUXT_PIYO_LOG_FEED_URL="${NUXT_PIYO_LOG_FEED_URL}" \
+  piyo-milk-dashboard:latest
+```
+
+Once the container is running, open http://localhost:3000.
 
 ## Development
 
-To start the development server:
+Install the dependencies and start the development server:
 
-```bash
+```sh
 nvm install "$(cat .nvmrc)"
 npm install
 npm run dev
 ```
 
-Then open http://localhost:3000.
+Once the server is running, open http://localhost:3000.
 
 ## Gallery
 
