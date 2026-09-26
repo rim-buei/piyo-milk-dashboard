@@ -6,9 +6,9 @@ A dashboard for tracking daily baby milk intake, feeding intervals, and feeding 
 
 ## Tech Stack
 
-* Nuxt 4
-* TypeScript
-* Tailwind CSS
+- Nuxt 4
+- TypeScript
+- Tailwind CSS
 
 ## Getting Started
 
