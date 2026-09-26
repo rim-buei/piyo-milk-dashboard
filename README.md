@@ -2,6 +2,8 @@
 
 A dashboard for tracking daily baby milk intake, feeding intervals, and feeding history using the PiyoLog Data Feed API.
 
+<img width="720" height="389" alt="Piyo Milk Dashboard" src="https://github.com/user-attachments/assets/ee9911fb-85d3-4728-ad29-3b061f1b913a" />
+
 ## Tech Stack
 
 * Nuxt 4
@@ -32,3 +34,13 @@ nvm install "$(cat .nvmrc)"
 npm install
 npm run dev
 ```
+
+Then open http://localhost:3000.
+
+## Gallery
+
+### Running on a Raspberry Pi 3 Model B+
+
+<img width="605" height="454" alt="Running on Raspberry Pi" src="https://github.com/user-attachments/assets/1917fab5-db74-49d3-b386-af32eda145ff" />
+
+<img width="605" height="454" alt="Running on Raspberry Pi" src="https://github.com/user-attachments/assets/6e9f7d11-70a5-420b-84f8-ad57ff986139" />
