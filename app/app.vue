@@ -16,10 +16,7 @@ useAutoRefresh(refresh);
       </div>
 
       <div class="col-span-2 row-span-1">
-        <Clock
-          :datetime="data.updatedAt"
-          class="h-full"
-        />
+        <Clock :datetime="data.updatedAt" class="h-full" />
       </div>
 
       <div class="col-span-2 row-span-4">
