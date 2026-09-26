@@ -1,19 +1,19 @@
 import type { PiyoLogResponse, PiyoLogRecord } from "types/piyoLog";
 import type { Dashboard, Feeding } from "types/dashboard";
+import dayjs from "dayjs";
 
 function analyzePiyoLogResponse(response: PiyoLogResponse): Dashboard {
   const config = useRuntimeConfig();
 
-  const now = new Date();
-  const today = new Intl.DateTimeFormat("en-CA", { timeZone: "Asia/Tokyo" }).format(now);
-  const start = new Date(`${today}T00:00:00+09:00`);
+  const today = dayjs().tz(config.public.timeZone).startOf("day");
+  const now = dayjs();
 
   const feedings = response.records
     .filter((record: PiyoLogRecord) => {
       return ["BreastFeeding", "ExpressedBreastMilk", "Formula"].includes(record.type);
     })
     .filter((record: PiyoLogRecord) => {
-      return new Date(record.datetime) >= start;
+      return dayjs(record.datetime) >= today;
     })
     .map((record: PiyoLogRecord): Feeding => {
       return {
@@ -23,7 +23,7 @@ function analyzePiyoLogResponse(response: PiyoLogResponse): Dashboard {
       };
     });
   const lastFeeding = feedings[feedings.length - 1];
-  const elapsedMinutes = Math.floor((now - new Date(lastFeeding.datetime).getTime()) / 1000 / 60);
+  const elapsedMinutes = Math.floor((now - dayjs(lastFeeding.datetime)) / 1000 / 60);
 
   return {
     dailyTarget: config.dailyTarget,

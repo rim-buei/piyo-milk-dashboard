@@ -5,6 +5,9 @@ export default defineNuxtConfig({
   runtimeConfig: {
     dailyTarget: 800,
     piyoLogFeedUrl: "https://example.com/FIXME",
+    public: {
+      timeZone: "Asia/Tokyo",
+    },
   },
 
   modules: ["@nuxtjs/tailwindcss"],

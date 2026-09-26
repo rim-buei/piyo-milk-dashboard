@@ -1,8 +1,5 @@
-export default function (isoString: string): string {
-  return new Intl.DateTimeFormat("en-CA", {
-    timeZone: "Asia/Tokyo",
-    hour: "2-digit",
-    minute: "2-digit",
-    hour12: false,
-  }).format(new Date(isoString));
+import dayjs from "dayjs";
+
+export default function (isoString: string, timeZone: string): string {
+  return dayjs(isoString).tz(timeZone).format("HH:mm");
 }

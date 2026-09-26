@@ -15,6 +15,8 @@ const props = defineProps({
   },
 });
 
+const config = useRuntimeConfig();
+
 const elapsedText = computed(() => {
   if (props.elapsedMinutes === null) {
     return "--";
@@ -48,7 +50,7 @@ const elapsedText = computed(() => {
         <div class="text-center">
           <p class="text-3xl text-slate-500">時刻</p>
           <p class="mt-1 text-6xl font-semibold text-slate-800">
-            {{ formatDateTime(lastFeeding.datetime) }}
+            {{ formatDateTime(lastFeeding.datetime, config.public.timeZone) }}
           </p>
         </div>
 

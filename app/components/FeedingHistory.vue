@@ -10,6 +10,8 @@ const props = defineProps({
     required: true,
   },
 });
+
+const config = useRuntimeConfig();
 </script>
 
 <template>
@@ -29,7 +31,7 @@ const props = defineProps({
         >
           <div class="flex items-center gap-4">
             <span class="w-40 text-3xl font-semibold tabular-nums text-slate-800">
-              {{ formatDateTime(feeding.datetime) }}
+              {{ formatDateTime(feeding.datetime, config.public.timeZone) }}
             </span>
             <span class="text-3xl font-medium text-slate-400">
               {{ translateFeedingType(feeding.type) }}

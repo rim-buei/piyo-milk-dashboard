@@ -5,6 +5,8 @@ const props = defineProps({
     required: true,
   },
 });
+
+const config = useRuntimeConfig();
 </script>
 
 <template>
@@ -12,7 +14,9 @@ const props = defineProps({
     <h1 class="text-3xl font-bold text-slate-700">現在時刻</h1>
 
     <div class="flex flex-1 items-center justify-center">
-      <p class="text-6xl font-bold text-slate-700">{{ formatDateTime(datetime) }}</p>
+      <p class="text-6xl font-bold text-slate-700">
+        {{ formatDateTime(datetime, config.public.timeZone) }}
+      </p>
     </div>
   </section>
 </template>
