@@ -10,7 +10,7 @@
     "postinstall": "nuxt prepare",
     "lint": "npm run lint:eslint && npm run lint:oxfmt",
     "lint:eslint": "eslint .",
-    "lint:oxfmt": "oxfmt"
+    "lint:oxfmt": "oxfmt --check"
   },
   "dependencies": {
     "@nuxtjs/tailwindcss": "^6.14.0",
