@@ -7,11 +7,11 @@ interface Feeding {
 const props = defineProps({
   elapsedMinutes: {
     type: Number,
-    required: true,
+    required: false,
   },
   lastFeeding: {
     type: Object as () => Feeding,
-    required: true,
+    required: false,
   },
 });
 

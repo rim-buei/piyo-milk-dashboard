@@ -23,7 +23,8 @@ function analyzePiyoLogResponse(response: PiyoLogResponse): Dashboard {
       };
     });
   const lastFeeding = feedings[feedings.length - 1];
-  const elapsedMinutes = Math.floor((now - dayjs(lastFeeding.datetime)) / 1000 / 60);
+  const elapsedMinutes =
+    lastFeeding == null ? null : Math.floor((now - dayjs(lastFeeding.datetime)) / 1000 / 60);
 
   return {
     dailyTarget: config.dailyTarget,
