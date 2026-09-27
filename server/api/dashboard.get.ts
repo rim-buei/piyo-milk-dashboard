@@ -18,13 +18,13 @@ function analyzePiyoLogResponse(response: PiyoLogResponse): Dashboard {
     .map((record: PiyoLogRecord): Feeding => {
       return {
         type: record.type,
-        datetime: record.datetime,
+        dateTime: record.datetime,
         amount: record.value?.value,
       };
     });
   const lastFeeding = feedings[feedings.length - 1];
   const elapsedMinutes =
-    lastFeeding == null ? null : Math.floor((now - dayjs(lastFeeding.datetime)) / 1000 / 60);
+    lastFeeding == null ? null : Math.floor((now - dayjs(lastFeeding.dateTime)) / 1000 / 60);
 
   return {
     dailyTarget: config.dailyTarget,

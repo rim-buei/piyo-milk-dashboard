@@ -1,7 +1,7 @@
 <script setup lang="ts">
 interface Feeding {
+  dateTime: string;
   amount: number;
-  datetime: string;
 }
 
 const props = defineProps({
@@ -50,7 +50,7 @@ const elapsedText = computed(() => {
         <div class="text-center">
           <p class="text-3xl text-slate-500">時刻</p>
           <p class="mt-1 text-6xl font-semibold text-slate-800">
-            {{ formatDateTime(lastFeeding.datetime, config.public.timeZone) }}
+            {{ formatDateTime(lastFeeding.dateTime, config.public.timeZone) }}
           </p>
         </div>
 

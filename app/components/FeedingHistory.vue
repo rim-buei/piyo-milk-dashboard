@@ -1,6 +1,6 @@
 <script setup lang="ts">
 interface Feeding {
-  datetime: string;
+  dateTime: string;
   amount: number;
 }
 
@@ -26,12 +26,12 @@ const config = useRuntimeConfig();
       <ul class="divide-y divide-slate-100">
         <li
           v-for="(feeding, index) in feedings"
-          :key="`${feeding.datetime}-${index}`"
+          :key="`${feeding.dateTime}-${index}`"
           class="flex items-center justify-between py-4 first:pt-0"
         >
           <div class="flex items-center gap-4">
             <span class="w-40 text-3xl font-semibold tabular-nums text-slate-800">
-              {{ formatDateTime(feeding.datetime, config.public.timeZone) }}
+              {{ formatDateTime(feeding.dateTime, config.public.timeZone) }}
             </span>
             <span class="text-3xl font-medium text-slate-400">
               {{ translateFeedingType(feeding.type) }}
