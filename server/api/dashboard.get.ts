@@ -12,9 +12,6 @@ function analyzePiyoLogResponse(response: PiyoLogResponse): Dashboard {
     .filter((record: PiyoLogRecord) => {
       return ["BreastFeeding", "ExpressedBreastMilk", "Formula"].includes(record.type);
     })
-    .filter((record: PiyoLogRecord) => {
-      return dayjs(record.datetime) >= today;
-    })
     .map((record: PiyoLogRecord): Feeding => {
       return {
         type: record.type,
@@ -22,19 +19,23 @@ function analyzePiyoLogResponse(response: PiyoLogResponse): Dashboard {
         amount: record.value?.value,
       };
     });
+  const dailyTotal = feedings
+    .filter((record: PiyoLogRecord) => {
+      return dayjs(record.datetime) >= today;
+    })
+    .filter((feeding: Feeding) => {
+      return feeding.amount > 0;
+    })
+    .reduce((acc: number, feeding: Feeding) => {
+      return acc + feeding.amount;
+    }, 0);
   const lastFeeding = feedings[feedings.length - 1];
   const elapsedMinutes =
     lastFeeding == null ? null : Math.floor((now - dayjs(lastFeeding.dateTime)) / 1000 / 60);
 
   return {
     dailyTarget: config.dailyTarget,
-    dailyTotal: feedings
-      .filter((feeding: Feeding) => {
-        return feeding.amount > 0;
-      })
-      .reduce((acc: number, feeding: Feeding) => {
-        return acc + feeding.amount;
-      }, 0),
+    dailyTotal: dailyTotal,
 
     feedings: feedings,
     lastFeeding: lastFeeding,

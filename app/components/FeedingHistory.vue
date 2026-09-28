@@ -17,15 +17,13 @@ const config = useRuntimeConfig();
 <template>
   <section class="flex h-full flex-col rounded-3xl bg-white p-6 shadow-lg ring-1 ring-slate-200">
     <div class="mb-5 flex items-center justify-between">
-      <h1 class="text-3xl font-bold text-slate-700">今日の履歴</h1>
-
-      <span class="text-3xl font-medium text-slate-400">{{ feedings.length }} 回</span>
+      <h1 class="text-3xl font-bold text-slate-700">最近の記録</h1>
     </div>
 
     <div v-if="feedings.length > 0" class="min-h-0 flex-1 overflow-y-auto">
       <ul class="divide-y divide-slate-100">
         <li
-          v-for="(feeding, index) in feedings"
+          v-for="(feeding, index) in feedings.slice(-config.public.historyCount).reverse()"
           :key="`${feeding.dateTime}-${index}`"
           class="flex items-center justify-between py-4 first:pt-0"
         >
