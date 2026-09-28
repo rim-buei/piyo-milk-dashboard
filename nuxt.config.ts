@@ -9,9 +9,9 @@ export default defineNuxtConfig({
   },
 
   runtimeConfig: {
-    dailyTarget: 800,
     piyoLogFeedUrl: "https://example.com/FIXME",
     public: {
+      dailyTarget: 800,
       historyCount: 8,
       timeZone: "Asia/Tokyo",
     },

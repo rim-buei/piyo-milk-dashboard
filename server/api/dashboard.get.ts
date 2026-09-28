@@ -34,7 +34,7 @@ function analyzePiyoLogResponse(response: PiyoLogResponse): Dashboard {
     lastFeeding == null ? null : Math.floor((now - dayjs(lastFeeding.dateTime)) / 1000 / 60);
 
   return {
-    dailyTarget: config.dailyTarget,
+    dailyTarget: config.public.dailyTarget,
     dailyTotal: dailyTotal,
 
     feedings: feedings,
