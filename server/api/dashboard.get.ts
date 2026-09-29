@@ -20,8 +20,8 @@ function analyzePiyoLogResponse(response: PiyoLogResponse): Dashboard {
       };
     });
   const dailyTotal = feedings
-    .filter((record: PiyoLogRecord) => {
-      return dayjs(record.datetime) >= today;
+    .filter((feeding: Feeding) => {
+      return dayjs(feeding.dateTime) >= today;
     })
     .filter((feeding: Feeding) => {
       return feeding.amount > 0;
