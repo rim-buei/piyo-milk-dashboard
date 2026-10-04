@@ -3,5 +3,9 @@
   "extends": ["config:best-practices"],
   "minimumReleaseAge": "7 days",
   "minimumReleaseAgeBehaviour": "timestamp-optional",
+
+  "lockFileMaintenance": {
+    "enabled": true
+  },
   "rangeStrategy": "pin"
 }
