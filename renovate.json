@@ -11,5 +11,13 @@
 
   "constraints": {
     "npm": "11.21.0"
-  }
+  },
+
+  "packageRules": [
+    {
+      "matchDatasources": ["npm"],
+      "minimumReleaseAge": "7 days",
+      "internalChecksFilter": "strict"
+    }
+  ]
 }
