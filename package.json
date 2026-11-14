@@ -15,7 +15,7 @@
   "dependencies": {
     "@tailwindcss/vite": "4.3.5",
     "dayjs": "1.11.23",
-    "npm": "11.21.2",
+    "npm": "12.2.2",
     "nuxt": "4.6.4",
     "tailwindcss": "4.3.5",
     "vue": "3.5.45",
